@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.69089264, g: 0.68969095, b: 0.6780451, a: 1}
+  m_IndirectSpecularColor: {r: 0.689686, g: 0.6889056, b: 0.6791804, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -197,7 +197,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &705507993
 GameObject:
@@ -292,7 +292,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 10, y: 100, z: 50}
 --- !u!114 &705507996
 MonoBehaviour:
@@ -308,7 +308,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotateSpeed: 5
   cycleSpeed: 0.1
-  xRotation: 180
+  xRotation: 150
   intensity: 1
   light: {fileID: 0}
 --- !u!45 &705507998
@@ -320,6 +320,89 @@ Skybox:
   m_GameObject: {fileID: 705507993}
   m_Enabled: 1
   m_CustomSkybox: {fileID: 2100000, guid: 41ad0cdf46f1b4e24b2d64f15ea29074, type: 2}
+--- !u!1 &910618464
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 910618467}
+  - component: {fileID: 910618466}
+  - component: {fileID: 910618465}
+  m_Layer: 0
+  m_Name: TimecircleCam
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!81 &910618465
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 910618464}
+  m_Enabled: 0
+--- !u!20 &910618466
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 910618464}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_FocalLength: 50
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+--- !u!4 &910618467
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 910618464}
+  m_LocalRotation: {x: 0.2164396, y: 0, z: 0, w: 0.97629607}
+  m_LocalPosition: {x: 0, y: 25, z: -30}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 25, y: 0, z: 0}
 --- !u!1 &963676502
 GameObject:
   m_ObjectHideFlags: 0
@@ -351,7 +434,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a462eeb24d1d4bf98bd07124509a871, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camPosition: {x: 30, y: -5, z: 10}
+  camPosition: {x: 30, y: 0, z: 30}
   SkyExposurePercentage: 0
   cam: {fileID: 0}
   myBuilding: []
@@ -388,7 +471,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 92.4
+  field of view: 60
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -414,7 +497,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963676502}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 210.7, y: 1.5, z: -213.7}
+  m_LocalPosition: {x: 30, y: 0, z: 30}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -433,7 +516,7 @@ GameObject:
   - component: {fileID: 2574707056482955612}
   m_Layer: 0
   m_Name: City_building_030
-  m_TagString: Untagged
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -513,7 +596,7 @@ GameObject:
   - component: {fileID: 4719010234740250358}
   m_Layer: 0
   m_Name: City_building_032
-  m_TagString: Untagged
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -581,7 +664,7 @@ GameObject:
   - component: {fileID: 2826868381229679442}
   m_Layer: 0
   m_Name: City_building_035
-  m_TagString: Untagged
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -703,7 +786,7 @@ GameObject:
   - component: {fileID: 5796695288639270129}
   m_Layer: 0
   m_Name: City_building_007
-  m_TagString: Untagged
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -798,7 +881,7 @@ GameObject:
   - component: {fileID: 2749675865972059706}
   m_Layer: 0
   m_Name: Object010
-  m_TagString: Untagged
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -936,7 +1019,7 @@ GameObject:
   - component: {fileID: 2503257583825374539}
   m_Layer: 0
   m_Name: City_building_022
-  m_TagString: Untagged
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -968,7 +1051,7 @@ GameObject:
   - component: {fileID: 1571217198565635906}
   m_Layer: 0
   m_Name: City_building_041
-  m_TagString: Untagged
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1082,7 +1165,7 @@ GameObject:
   - component: {fileID: 4803459977433959717}
   m_Layer: 0
   m_Name: City_building_016
-  m_TagString: Untagged
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1210,7 +1293,7 @@ GameObject:
   - component: {fileID: 3148476866074542765}
   m_Layer: 0
   m_Name: City_building_023
-  m_TagString: Untagged
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1236,7 +1319,7 @@ GameObject:
   - component: {fileID: 8173423478928147141}
   m_Layer: 0
   m_Name: City_building_011
-  m_TagString: Untagged
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1295,7 +1378,7 @@ GameObject:
   - component: {fileID: 7516830493400016745}
   m_Layer: 0
   m_Name: City_building_001
-  m_TagString: Untagged
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1384,7 +1467,7 @@ GameObject:
   - component: {fileID: 4368892059949104292}
   m_Layer: 0
   m_Name: City_building_026
-  m_TagString: Untagged
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1402,7 +1485,7 @@ GameObject:
   - component: {fileID: 1012108891257537626}
   m_Layer: 0
   m_Name: City_building_039
-  m_TagString: Untagged
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1530,7 +1613,7 @@ GameObject:
   - component: {fileID: 4007630848615480432}
   m_Layer: 0
   m_Name: City_building_017
-  m_TagString: Untagged
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1597,7 +1680,7 @@ GameObject:
   - component: {fileID: 3279002204902867888}
   m_Layer: 0
   m_Name: City_building_028
-  m_TagString: Untagged
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1696,7 +1779,7 @@ GameObject:
   - component: {fileID: 5742467517391210321}
   m_Layer: 0
   m_Name: City_building_040
-  m_TagString: Untagged
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1714,7 +1797,7 @@ GameObject:
   - component: {fileID: 9192322862937858150}
   m_Layer: 0
   m_Name: City_building_038
-  m_TagString: Untagged
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1832,7 +1915,7 @@ GameObject:
   - component: {fileID: 1034364846826973964}
   m_Layer: 0
   m_Name: City_building_034
-  m_TagString: Untagged
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1946,7 +2029,7 @@ GameObject:
   - component: {fileID: 5797098706421303575}
   m_Layer: 0
   m_Name: City_building_036
-  m_TagString: Untagged
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1967,11 +2050,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4651110404250504711}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 197.7, y: 1.09, z: -223.7}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.11470194, y: 0.11470194, z: 0.11470194}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5275240012542889503
 MeshFilter:
@@ -2035,7 +2118,7 @@ GameObject:
   - component: {fileID: 6125379277097881174}
   m_Layer: 0
   m_Name: City_building_033
-  m_TagString: Untagged
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2239,7 +2322,7 @@ GameObject:
   - component: {fileID: 7378270405565061262}
   m_Layer: 0
   m_Name: City_building_037
-  m_TagString: Untagged
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2252,7 +2335,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 210008194106035817}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 193.28348, y: 1, z: -221.66225}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6569868232723640849}
@@ -2286,7 +2369,7 @@ Transform:
   - {fileID: 8453183337315342849}
   - {fileID: 5005954539405762778}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5984873385088229220
 GameObject:
@@ -2301,7 +2384,7 @@ GameObject:
   - component: {fileID: 4678314977926623749}
   m_Layer: 0
   m_Name: City_building_024
-  m_TagString: Untagged
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2479,7 +2562,7 @@ GameObject:
   - component: {fileID: 6733337028179955102}
   m_Layer: 0
   m_Name: Line002
-  m_TagString: Untagged
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2497,7 +2580,7 @@ GameObject:
   - component: {fileID: 7530587623517798143}
   m_Layer: 0
   m_Name: City_building_013
-  m_TagString: Untagged
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2614,7 +2697,7 @@ GameObject:
   - component: {fileID: 5577210618134388035}
   m_Layer: 0
   m_Name: City_building_014
-  m_TagString: Untagged
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2714,7 +2797,7 @@ GameObject:
   - component: {fileID: 5296054397521616758}
   m_Layer: 0
   m_Name: City_building_010
-  m_TagString: Untagged
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2740,7 +2823,7 @@ GameObject:
   - component: {fileID: 3659541441254030712}
   m_Layer: 0
   m_Name: City_building_031
-  m_TagString: Untagged
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2788,7 +2871,7 @@ GameObject:
   - component: {fileID: 1814827103956005464}
   m_Layer: 0
   m_Name: City_building_004
-  m_TagString: Untagged
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2877,7 +2960,7 @@ GameObject:
   - component: {fileID: 1313943208506626636}
   m_Layer: 0
   m_Name: Plane001
-  m_TagString: Untagged
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2986,7 +3069,7 @@ GameObject:
   - component: {fileID: 4687833756655086958}
   m_Layer: 0
   m_Name: City_building_008
-  m_TagString: Untagged
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
