@@ -30,10 +30,6 @@ public class SkyExposure : MonoBehaviour
 
         ScanTime=3.0f;
 
-    }
-
-
-    void Update(){
 
         cam.backgroundColor = skyColor;
 
@@ -41,6 +37,12 @@ public class SkyExposure : MonoBehaviour
         {
             building.GetComponent<Renderer>().material.SetColor("_Color",buildingColor);
         }
+
+    }
+
+
+    void Update(){
+
 
         NextScanTime+=Time.deltaTime;
         if(NextScanTime>=ScanTime){
@@ -50,6 +52,9 @@ public class SkyExposure : MonoBehaviour
     }
 
     IEnumerator CaptureScreenShot(){
+
+
+
         yield return new WaitForEndOfFrame();
         int numOfPixel=0;
         int numOfSky=0;
