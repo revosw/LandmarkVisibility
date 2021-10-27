@@ -123,82 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &393478098
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 393478101}
-  - component: {fileID: 393478100}
-  - component: {fileID: 393478099}
-  m_Layer: 0
-  m_Name: Terrain
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
---- !u!154 &393478099
-TerrainCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 393478098}
-  m_Material: {fileID: 0}
-  m_Enabled: 1
-  m_TerrainData: {fileID: 15600000, guid: d31cd40f34c2bc64b89d92a2a092068c, type: 2}
-  m_EnableTreeColliders: 1
---- !u!218 &393478100
-Terrain:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 393478098}
-  m_Enabled: 1
-  serializedVersion: 6
-  m_TerrainData: {fileID: 15600000, guid: d31cd40f34c2bc64b89d92a2a092068c, type: 2}
-  m_TreeDistance: 5000
-  m_TreeBillboardDistance: 50
-  m_TreeCrossFadeLength: 5
-  m_TreeMaximumFullLODCount: 50
-  m_DetailObjectDistance: 80
-  m_DetailObjectDensity: 1
-  m_HeightmapPixelError: 5
-  m_SplatMapDistance: 1000
-  m_HeightmapMaximumLOD: 0
-  m_ShadowCastingMode: 2
-  m_DrawHeightmap: 1
-  m_DrawInstanced: 0
-  m_DrawTreesAndFoliage: 1
-  m_ReflectionProbeUsage: 1
-  m_MaterialTemplate: {fileID: 10652, guid: 0000000000000000f000000000000000, type: 0}
-  m_BakeLightProbesForTrees: 1
-  m_PreserveTreePrototypeLayers: 0
-  m_DeringLightProbesForTrees: 1
-  m_ScaleInLightmap: 0.0256
-  m_LightmapParameters: {fileID: 15203, guid: 0000000000000000f000000000000000, type: 0}
-  m_GroupingID: 0
-  m_RenderingLayerMask: 1
-  m_AllowAutoConnect: 1
---- !u!4 &393478101
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 393478098}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -500, y: 0, z: -500}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -496,12 +420,102 @@ MonoBehaviour:
   m_GameObject: {fileID: 963676502}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0be3b80656a74792b59bece4198399f, type: 3}
+  m_Script: {fileID: 11500000, guid: 0a462eeb24d1d4bf98bd07124509a871, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rayOrigin: {x: 0, y: 0, z: 0}
+  cam: {fileID: 0}
+  mousePos: {x: 0, y: 0, z: 0}
   SkyExposurePercentage: 0
-  myBuilding: []
+--- !u!1 &1567517627
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1567517631}
+  - component: {fileID: 1567517630}
+  - component: {fileID: 1567517629}
+  - component: {fileID: 1567517628}
+  m_Layer: 8
+  m_Name: Terrain
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!65 &1567517628
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1567517627}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!154 &1567517629
+TerrainCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1567517627}
+  m_Material: {fileID: 0}
+  m_Enabled: 1
+  m_TerrainData: {fileID: 15600000, guid: 315a4556884424d278b8d5160147294d, type: 2}
+  m_EnableTreeColliders: 1
+--- !u!218 &1567517630
+Terrain:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1567517627}
+  m_Enabled: 1
+  serializedVersion: 6
+  m_TerrainData: {fileID: 15600000, guid: 315a4556884424d278b8d5160147294d, type: 2}
+  m_TreeDistance: 5000
+  m_TreeBillboardDistance: 50
+  m_TreeCrossFadeLength: 5
+  m_TreeMaximumFullLODCount: 50
+  m_DetailObjectDistance: 80
+  m_DetailObjectDensity: 1
+  m_HeightmapPixelError: 5
+  m_SplatMapDistance: 1000
+  m_HeightmapMaximumLOD: 0
+  m_ShadowCastingMode: 2
+  m_DrawHeightmap: 1
+  m_DrawInstanced: 0
+  m_DrawTreesAndFoliage: 1
+  m_ReflectionProbeUsage: 1
+  m_MaterialTemplate: {fileID: 10652, guid: 0000000000000000f000000000000000, type: 0}
+  m_BakeLightProbesForTrees: 1
+  m_PreserveTreePrototypeLayers: 0
+  m_DeringLightProbesForTrees: 1
+  m_ScaleInLightmap: 0.0256
+  m_LightmapParameters: {fileID: 15203, guid: 0000000000000000f000000000000000, type: 0}
+  m_GroupingID: 0
+  m_RenderingLayerMask: 1
+  m_AllowAutoConnect: 1
+--- !u!4 &1567517631
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1567517627}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -250, y: 0, z: -250}
+  m_LocalScale: {x: 500, y: 500, z: 500}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &12624890985218574
 GameObject:
   m_ObjectHideFlags: 0
@@ -513,6 +527,7 @@ GameObject:
   - component: {fileID: 9043778273931737279}
   - component: {fileID: 8863027292950878939}
   - component: {fileID: 2574707056482955612}
+  - component: {fileID: 12624890985218575}
   m_Layer: 0
   m_Name: City_building_030
   m_TagString: Building
@@ -520,6 +535,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &12624890985218575
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 12624890985218574}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 8.120838, y: 7.0432453, z: 9.855418}
+  m_Center: {x: -0.00001168251, y: -0.00000011920932, z: 4.924092}
 --- !u!4 &20717888063722980
 Transform:
   m_ObjectHideFlags: 0
@@ -593,6 +621,7 @@ GameObject:
   - component: {fileID: 7116659858596155027}
   - component: {fileID: 233176259171876046}
   - component: {fileID: 4719010234740250358}
+  - component: {fileID: 478421281395462875}
   m_Layer: 0
   m_Name: City_building_032
   m_TagString: Building
@@ -600,6 +629,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &478421281395462875
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 478421281395462874}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 11.836522, y: 12.829919, z: 5.90382}
+  m_Center: {x: 0.9609084, y: 0.0000038146973, z: 2.948234}
 --- !u!4 &532682868832987709
 Transform:
   m_ObjectHideFlags: 0
@@ -661,6 +703,7 @@ GameObject:
   - component: {fileID: 3434341916750553579}
   - component: {fileID: 1591951332135462807}
   - component: {fileID: 2826868381229679442}
+  - component: {fileID: 851173507448830558}
   m_Layer: 0
   m_Name: City_building_035
   m_TagString: Building
@@ -668,6 +711,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &851173507448830558
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 851173507448830557}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 8.120834, y: 7.0432453, z: 9.855418}
+  m_Center: {x: -0.00000023841858, y: -0.000007748604, z: 4.924092}
 --- !u!23 &1012108891257537626
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -892,6 +948,7 @@ GameObject:
   - component: {fileID: 8453183337315342849}
   - component: {fileID: 2956799535005536872}
   - component: {fileID: 2749675865972059706}
+  - component: {fileID: 1475266234982672763}
   m_Layer: 0
   m_Name: Object010
   m_TagString: Building
@@ -899,6 +956,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &1475266234982672763
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1475266234982672762}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 40.050385, y: 40.050396, z: 1.1210951}
+  m_Center: {x: -18.42849, y: -2.5398667, z: -0.00000011920929}
 --- !u!23 &1571217198565635906
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1030,6 +1100,7 @@ GameObject:
   - component: {fileID: 3720765598563610244}
   - component: {fileID: 7242342698955610823}
   - component: {fileID: 2503257583825374539}
+  - component: {fileID: 2167434115507638558}
   m_Layer: 0
   m_Name: City_building_022
   m_TagString: Building
@@ -1037,6 +1108,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &2167434115507638558
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2167434115507638557}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 13.04541, y: 20.236515, z: 8.309065}
+  m_Center: {x: 2.7852785e-13, y: 4.8999224, z: 4.1364202}
 --- !u!4 &2308228862852918708
 Transform:
   m_ObjectHideFlags: 0
@@ -1190,6 +1274,7 @@ GameObject:
   - component: {fileID: 1926556133276035773}
   - component: {fileID: 7937308713740175073}
   - component: {fileID: 4803459977433959717}
+  - component: {fileID: 2632687398202283785}
   m_Layer: 0
   m_Name: City_building_016
   m_TagString: Building
@@ -1197,6 +1282,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &2632687398202283785
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2632687398202283784}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 12.7126, y: 7.0176373, z: 10.216327}
+  m_Center: {x: 0, y: 0.0000076293945, z: 5.1054206}
 --- !u!23 &2749675865972059706
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1534,6 +1632,7 @@ GameObject:
   - component: {fileID: 9111331408442305870}
   - component: {fileID: 7313346504335821010}
   - component: {fileID: 4368892059949104292}
+  - component: {fileID: 3545561814466888718}
   m_Layer: 0
   m_Name: City_building_026
   m_TagString: Building
@@ -1541,6 +1640,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &3545561814466888718
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3545561814466888717}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 22.611855, y: 10.436685, z: 8.309065}
+  m_Center: {x: 4.783222, y: 0.0000035762787, z: 4.1364202}
 --- !u!1 &3611592784364023275
 GameObject:
   m_ObjectHideFlags: 0
@@ -1552,6 +1664,7 @@ GameObject:
   - component: {fileID: 1136247269124101921}
   - component: {fileID: 350868643219111821}
   - component: {fileID: 1012108891257537626}
+  - component: {fileID: 3611592784364023276}
   m_Layer: 0
   m_Name: City_building_039
   m_TagString: Building
@@ -1559,6 +1672,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &3611592784364023276
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3611592784364023275}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 8.120838, y: 7.0432453, z: 9.855418}
+  m_Center: {x: -0.000007867813, y: -0.00000011920932, z: 4.924092}
 --- !u!23 &3659541441254030712
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1680,6 +1806,7 @@ GameObject:
   - component: {fileID: 7337304042169628708}
   - component: {fileID: 3963126383189596257}
   - component: {fileID: 4007630848615480432}
+  - component: {fileID: 3927545880285314139}
   m_Layer: 0
   m_Name: City_building_017
   m_TagString: Building
@@ -1687,6 +1814,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &3927545880285314139
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3927545880285314138}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 12.712605, y: 7.0176373, z: 10.216327}
+  m_Center: {x: 0.0000076293945, y: 0, z: 5.1054206}
 --- !u!33 &3963126383189596257
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1747,6 +1887,7 @@ GameObject:
   - component: {fileID: 6216304030253796442}
   - component: {fileID: 1019571322202084107}
   - component: {fileID: 3279002204902867888}
+  - component: {fileID: 4100566260023293425}
   m_Layer: 0
   m_Name: City_building_028
   m_TagString: Building
@@ -1754,6 +1895,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &4100566260023293425
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4100566260023293424}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 8.120834, y: 7.0432453, z: 9.855418}
+  m_Center: {x: -0.00000023841858, y: -0.000007748604, z: 4.924092}
 --- !u!33 &4117270203904984069
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1846,6 +2000,7 @@ GameObject:
   - component: {fileID: 2899922390918530645}
   - component: {fileID: 224947878848532993}
   - component: {fileID: 5742467517391210321}
+  - component: {fileID: 4460622456802927593}
   m_Layer: 0
   m_Name: City_building_040
   m_TagString: Building
@@ -1853,6 +2008,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &4460622456802927593
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4460622456802927592}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 8.120838, y: 7.0432453, z: 9.855418}
+  m_Center: {x: -0.000007867813, y: -0.00000011920932, z: 4.924092}
 --- !u!1 &4508699346472151409
 GameObject:
   m_ObjectHideFlags: 0
@@ -1864,6 +2032,7 @@ GameObject:
   - component: {fileID: 3848366511295108758}
   - component: {fileID: 1757831912447400991}
   - component: {fileID: 9192322862937858150}
+  - component: {fileID: 4508699346472151410}
   m_Layer: 0
   m_Name: City_building_038
   m_TagString: Building
@@ -1871,6 +2040,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &4508699346472151410
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4508699346472151409}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 13.045413, y: 18.524431, z: 8.309065}
+  m_Center: {x: -0.0000038146977, y: 4.0438747, z: 4.1364202}
 --- !u!1 &4651110404250504711
 GameObject:
   m_ObjectHideFlags: 0
@@ -1882,6 +2064,7 @@ GameObject:
   - component: {fileID: 5085679375294409035}
   - component: {fileID: 829943844127124468}
   - component: {fileID: 3889980531277906471}
+  - component: {fileID: 4651110404250504712}
   m_Layer: 0
   m_Name: AngelMonument
   m_TagString: Building
@@ -1889,6 +2072,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &4651110404250504712
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4651110404250504711}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 169.9267, y: 302.3995, z: 88.8812}
+  m_Center: {x: 2.8309479, y: 151.19835, z: 5.3899}
 --- !u!23 &4678314977926623749
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1982,6 +2178,7 @@ GameObject:
   - component: {fileID: 532682868832987709}
   - component: {fileID: 6237245293618840363}
   - component: {fileID: 1034364846826973964}
+  - component: {fileID: 4699927141136406237}
   m_Layer: 0
   m_Name: City_building_034
   m_TagString: Building
@@ -1989,6 +2186,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &4699927141136406237
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4699927141136406236}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 19.779282, y: 10.436217, z: 8.309065}
+  m_Center: {x: -3.3669395, y: -0.00023174283, z: 4.1364202}
 --- !u!23 &4719010234740250358
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2096,6 +2306,7 @@ GameObject:
   - component: {fileID: 1037028974409239235}
   - component: {fileID: 4360660501984487107}
   - component: {fileID: 5797098706421303575}
+  - component: {fileID: 5055276577592678426}
   m_Layer: 0
   m_Name: City_building_036
   m_TagString: Building
@@ -2103,6 +2314,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &5055276577592678426
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5055276577592678425}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 11.020992, y: 8.235409, z: 7.291197}
+  m_Center: {x: 0.14042693, y: 0.2911175, z: 3.6459646}
 --- !u!33 &5064164957877138583
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -2123,7 +2347,7 @@ Transform:
   m_LocalScale: {x: 0.11470194, y: 0.11470194, z: 0.11470194}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5275240012542889503
 MeshFilter:
@@ -2185,6 +2409,7 @@ GameObject:
   - component: {fileID: 1122251582325483025}
   - component: {fileID: 94561825617004934}
   - component: {fileID: 6125379277097881174}
+  - component: {fileID: 5303689829284829195}
   m_Layer: 0
   m_Name: City_building_033
   m_TagString: Building
@@ -2192,6 +2417,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &5303689829284829195
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5303689829284829194}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 19.518223, y: 8.235409, z: 7.291197}
+  m_Center: {x: 4.389037, y: 0.29112512, z: 3.6459646}
 --- !u!4 &5469448936631080768
 Transform:
   m_ObjectHideFlags: 0
@@ -2389,6 +2627,7 @@ GameObject:
   - component: {fileID: 2308228862852918708}
   - component: {fileID: 5734911726406039485}
   - component: {fileID: 7378270405565061262}
+  - component: {fileID: 5855700147597508090}
   m_Layer: 0
   m_Name: City_building_037
   m_TagString: Building
@@ -2396,6 +2635,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &5855700147597508090
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5855700147597508089}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 12.30209, y: 10.436685, z: 8.309065}
+  m_Center: {x: -0.37166023, y: 0.0000035762787, z: 4.1364202}
 --- !u!4 &5930833293830497631
 Transform:
   m_ObjectHideFlags: 0
@@ -2438,7 +2690,7 @@ Transform:
   - {fileID: 8453183337315342849}
   - {fileID: 5005954539405762778}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5984873385088229220
 GameObject:
@@ -2451,6 +2703,7 @@ GameObject:
   - component: {fileID: 2547038151257390561}
   - component: {fileID: 4460225010289686213}
   - component: {fileID: 4678314977926623749}
+  - component: {fileID: 5984873385088229221}
   m_Layer: 0
   m_Name: City_building_024
   m_TagString: Building
@@ -2458,6 +2711,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &5984873385088229221
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5984873385088229220}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7.060393, y: 5.2050667, z: 3.4438891}
+  m_Center: {x: 0, y: -0.0000076293945, z: 1.7103415}
 --- !u!4 &5998466231834347707
 Transform:
   m_ObjectHideFlags: 0
@@ -2629,6 +2895,7 @@ GameObject:
   - component: {fileID: 6356665779064550371}
   - component: {fileID: 5064164957877138583}
   - component: {fileID: 6733337028179955102}
+  - component: {fileID: 6770869951281327533}
   m_Layer: 0
   m_Name: Line002
   m_TagString: Building
@@ -2636,6 +2903,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &6770869951281327533
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6770869951281327532}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 94.33377, y: 96.45092, z: 1.1052852}
+  m_Center: {x: -1.9359155, y: 1.8545156, z: -0.4838649}
 --- !u!1 &6823925088915825738
 GameObject:
   m_ObjectHideFlags: 0
@@ -2647,6 +2927,7 @@ GameObject:
   - component: {fileID: 9153859604295576955}
   - component: {fileID: 4386574138666459978}
   - component: {fileID: 7530587623517798143}
+  - component: {fileID: 6823925088915825739}
   m_Layer: 0
   m_Name: City_building_013
   m_TagString: Building
@@ -2654,6 +2935,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &6823925088915825739
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6823925088915825738}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 11.020992, y: 8.235409, z: 7.291197}
+  m_Center: {x: 0.14041167, y: 0.2911175, z: 3.6459646}
 --- !u!4 &6948368404422112235
 Transform:
   m_ObjectHideFlags: 0
@@ -2764,6 +3058,7 @@ GameObject:
   - component: {fileID: 6948368404422112235}
   - component: {fileID: 5275240012542889503}
   - component: {fileID: 5577210618134388035}
+  - component: {fileID: 7505695163353249527}
   m_Layer: 0
   m_Name: City_building_014
   m_TagString: Building
@@ -2771,6 +3066,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &7505695163353249527
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7505695163353249526}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 9.914705, y: 23.785254, z: 5.9055476}
+  m_Center: {x: 0.00000023841866, y: 5.477659, z: 2.9473684}
 --- !u!23 &7516830493400016745
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2864,6 +3172,7 @@ GameObject:
   - component: {fileID: 8092535868783117419}
   - component: {fileID: 3410190499730128350}
   - component: {fileID: 5296054397521616758}
+  - component: {fileID: 7698168081034945976}
   m_Layer: 0
   m_Name: City_building_010
   m_TagString: Building
@@ -2871,6 +3180,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &7698168081034945976
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7698168081034945975}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 12.712605, y: 7.0176373, z: 10.216327}
+  m_Center: {x: 0.0000076293945, y: 0, z: 5.1054206}
 --- !u!33 &7937308713740175073
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -2890,6 +3212,7 @@ GameObject:
   - component: {fileID: 5998466231834347707}
   - component: {fileID: 3436929528101925290}
   - component: {fileID: 3659541441254030712}
+  - component: {fileID: 7944004570536071691}
   m_Layer: 0
   m_Name: City_building_031
   m_TagString: Building
@@ -2897,6 +3220,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &7944004570536071691
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7944004570536071690}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 8.120838, y: 7.0432453, z: 9.855418}
+  m_Center: {x: -0.00001168251, y: -0.00000011920932, z: 4.924092}
 --- !u!33 &7962756595377052484
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -2938,6 +3274,7 @@ GameObject:
   - component: {fileID: 5469448936631080768}
   - component: {fileID: 1891334868378522371}
   - component: {fileID: 1814827103956005464}
+  - component: {fileID: 8158100558198922505}
   m_Layer: 0
   m_Name: City_building_004
   m_TagString: Building
@@ -2945,6 +3282,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &8158100558198922505
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8158100558198922504}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 11.836522, y: 12.829919, z: 5.90382}
+  m_Center: {x: 0.9609084, y: 0.0000038146973, z: 2.948234}
 --- !u!23 &8173423478928147141
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3027,13 +3377,27 @@ GameObject:
   - component: {fileID: 5005954539405762778}
   - component: {fileID: 7962756595377052484}
   - component: {fileID: 1313943208506626636}
-  m_Layer: 0
+  - component: {fileID: 8962076512841103262}
+  m_Layer: 8
   m_Name: Plane001
   m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &8962076512841103262
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8962076512841103261}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 97.043846, y: 97.04387, z: 1}
+  m_Center: {x: 0, y: 0.0000000055879354, z: 0}
 --- !u!4 &9043778273931737279
 Transform:
   m_ObjectHideFlags: 0
@@ -3136,6 +3500,7 @@ GameObject:
   - component: {fileID: 2777315062091187696}
   - component: {fileID: 4343768297331664822}
   - component: {fileID: 4687833756655086958}
+  - component: {fileID: 9219256037586747018}
   m_Layer: 0
   m_Name: City_building_008
   m_TagString: Building
@@ -3143,3 +3508,16 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &9219256037586747018
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9219256037586747017}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7.060396, y: 5.2050667, z: 3.4438891}
+  m_Center: {x: -0.0000038146973, y: 0, z: 1.7103415}
