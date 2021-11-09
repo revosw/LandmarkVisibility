@@ -55,7 +55,19 @@
   <ItemGroup>
     <Compile Include="Assets\Script\SkyExposure.cs" />
     <Compile Include="Assets\Script\DayNightCircle.cs" />
+<<<<<<< Updated upstream
     <Compile Include="Assets\Script\SphereController.cs" />
+=======
+    <Compile Include="Assets\flycam.cs" />
+    <Compile Include="Assets\lightController.cs" />
+    <Compile Include="Assets\Script\GridPlane.cs" />
+    <Compile Include="Assets\Script\PlaneGrid.cs" />
+    <Compile Include="Assets\Script\SahdowDetect.cs" />
+    <Compile Include="Assets\Script\HeatMap.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\HeatMapShader.shader" />
+>>>>>>> Stashed changes
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

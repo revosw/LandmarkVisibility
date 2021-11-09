@@ -153,8 +153,13 @@ InputManager:
     m_Name: Horizontal
     descriptiveName: 
     descriptiveNegativeName: 
+<<<<<<< Updated upstream
     negativeButton: 
     positiveButton: 
+=======
+    negativeButton: a
+    positiveButton: d
+>>>>>>> Stashed changes
     altNegativeButton: 
     altPositiveButton: 
     gravity: 0
