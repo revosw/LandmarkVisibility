@@ -60,7 +60,7 @@ public class SphereController : MonoBehaviour
                             if (Physics.Raycast(transform.position, transform.TransformDirection(rayDirection), out hit, Mathf.Infinity))
                             {
                                 Debug.DrawRay(transform.position, transform.TransformDirection(rayDirection) * hit.distance, Color.yellow);
-                   
+                               
                                 hitBuilding = hit.collider;
                                 hitBuilding.GetComponent<Renderer>().material.SetColor("_Color", Color.red);
 
