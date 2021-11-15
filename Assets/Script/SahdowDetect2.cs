@@ -44,7 +44,7 @@ public class SahdowDetect2 : MonoBehaviour
         PositionMatrix(10f);
         Lights = new List<Light>(FindObjectsOfType<Light>()); 
         light = Lights[0];
-        light.transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(180,transform.localEulerAngles.y, transform.localEulerAngles.z),1.0f);
+        //light.transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(180,transform.localEulerAngles.y, transform.localEulerAngles.z),1.0f);
     }
 
      void Update()
@@ -143,7 +143,7 @@ public class SahdowDetect2 : MonoBehaviour
             for (float z = -(size.y ); z <= size.y ; z += res)
             {
                  positionMatrix[counter_width,counter_height]=new Vector3(x, 0, z);
-                print(positionMatrix[counter_width,counter_height]);                
+                //print(positionMatrix[counter_width,counter_height]);                
                 counter_height++;
             }
             counter_height=0;
@@ -155,7 +155,7 @@ public class SahdowDetect2 : MonoBehaviour
      
   public void addHitPoint()
   {
-    mMaterial.SetFloatArray("_Hits", mPoints);
+        mMaterial.SetFloatArray("_Hits", mPoints);
     mMaterial.SetInt("_HitCount", mHitCount);
 
   }
