@@ -112,7 +112,7 @@ Shader "Unlit/HeatMapShader"
                 fixed4 col = tex2D(_MainTex, i.uv);
 
                 float2 uv = i.uv;
-                uv = uv * 4.0 - float2(2.0, 2.0); //change in coordinate range to -2 - 2
+                uv = uv * 4.0 - float2(4.0, 4.0); //change in coordinate range to -2 - 2
 
                 float totalWeight = 0;
                 for (float i = 0; i < _hitCount; i++)

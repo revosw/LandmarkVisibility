@@ -82,4 +82,23 @@ public class SphereController : MonoBehaviour
             activate = false;
         }
     }
+
+    public void activateLandmark()
+    {
+        if (activate == false)
+        {
+            activate = true;
+        }
+        else { activate = false; }
+    }
+
+    public void activateVisible()
+    {
+        Debug.Log("Button clicked");
+        if (visible == false)
+        {
+            visible = true;
+        }
+        else { visible = false; }
+    }
 }
