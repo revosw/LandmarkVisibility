@@ -185,7 +185,7 @@ int[,] changeFrequencyMap;
             text += "\n";
         }
 
-        Debug.Log(text);
+       //Debug.Log(text);
     }
 
     private void PrintCFH(int[,] heatmap)
@@ -200,6 +200,6 @@ int[,] changeFrequencyMap;
             text += "\n";
         }
 
-        Debug.Log(text);
+       // Debug.Log(text);
     }
 }

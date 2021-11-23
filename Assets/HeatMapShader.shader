@@ -63,10 +63,10 @@ Shader "Unlit/HeatMapShader"
                 pointRanges[2] = 0.50;
                 pointRanges[3] = 0.75;
                 pointRanges[4] = 1.0;
-                _hitCount = 1; 
-                _Hits[0] = 0;
-                _Hits[1] = 0;
-                _Hits[2] = 2;
+                //_hitCount = 1; 
+                //_Hits[0] = 0;
+                //_Hits[1] = 0;
+                //_Hits[2] = 2;
             }
             
             float distsq(float2 a, float2 b) 

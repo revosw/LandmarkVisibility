@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SphereController : MonoBehaviour
 {
@@ -23,6 +24,8 @@ public class SphereController : MonoBehaviour
     private float totalRays = 0;
     private float raysHit = 0;
     private int rotationPoints = 360;
+
+    public Text visIndexDisplay;
 
     // Start is called before the first frame update
     void Start()
@@ -50,6 +53,7 @@ public class SphereController : MonoBehaviour
 
         if (activate == true)
         {
+            
             Visibiliyt_Index = 0;
             for (int r = 0; r < 1; r++)
             {
@@ -88,17 +92,8 @@ public class SphereController : MonoBehaviour
         if (activate == false)
         {
             activate = true;
+            visIndexDisplay.text = ("Visibility index: " + Visibiliyt_Index);
         }
         else { activate = false; }
-    }
-
-    public void activateVisible()
-    {
-        Debug.Log("Button clicked");
-        if (visible == false)
-        {
-            visible = true;
-        }
-        else { visible = false; }
     }
 }

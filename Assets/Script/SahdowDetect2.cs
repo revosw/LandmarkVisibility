@@ -77,7 +77,7 @@ public class SahdowDetect2 : MonoBehaviour
                         mPoints[mHitCount * 3 + 1] = position.z/height;
                         mPoints[(t+s) * 3 + 2] = shadow_counter;
                         mHitCount++;
-                        print("Shadow counter in position"+ position[0]+position[1]+position[2] +"is" + shadow_counter);
+                       // print("Shadow counter in position"+ position[0]+position[1]+position[2] +"is" + shadow_counter);
 
                     
                     }

@@ -12,14 +12,18 @@ public class DayNightCircle : MonoBehaviour
 
     public Light light;
 
+    private bool activ;
+    private bool isPushed;
+    private bool run;
+
     void Start()
     {
         light = GetComponent<Light>();
-        StartCoroutine(cycle());
+        isPushed = false;
     }
 
     public IEnumerator cycle(){
-        while(true){
+        while(run){
             yield return new WaitForSeconds(cycleSpeed);
             rotate();
         }
@@ -31,5 +35,23 @@ public class DayNightCircle : MonoBehaviour
         xRotation=transform.rotation.eulerAngles.x;
         light.intensity = (xRotation>150)? 0 : intensity;
 
+    }
+
+    public void startDayNight()
+    {
+        if(isPushed == false)
+        {
+            Debug.Log("trykket");
+            activ = true;
+            isPushed = true;
+            run = true;
+            StartCoroutine(cycle());
+        }
+        else
+        {
+            activ = false;
+            isPushed = false;
+            run = false;
+        }
     }
 }

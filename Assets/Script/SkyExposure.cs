@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SkyExposure : MonoBehaviour
 {
     public Camera cam;
     public Vector3 mousePos;
     public float SkyExposurePercentage;
+
+    public Text skyExpText;
 
     void Start(){
         cam = GetComponent<Camera>();
@@ -22,6 +25,7 @@ public class SkyExposure : MonoBehaviour
                 mousePos=raycast.point;
                 StartCoroutine(CalculateSkyExposure());
             }
+            skyExpText.text = ("Sky visibility: " + SkyExposurePercentage);
         }   
     }
 
