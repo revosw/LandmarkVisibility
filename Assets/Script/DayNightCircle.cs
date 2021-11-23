@@ -20,6 +20,7 @@ public class DayNightCircle : MonoBehaviour
     {
         light = GetComponent<Light>();
         isPushed = false;
+        light.transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(50,132, 15),1.0f);
     }
 
     public IEnumerator cycle(){
@@ -31,7 +32,8 @@ public class DayNightCircle : MonoBehaviour
 
     public void rotate()
     {
-        transform.Rotate(Vector3.up*rotateSpeed);
+        Vector3 rotationdirection=new Vector3(1,0,0);
+        transform.Rotate(rotationdirection*rotateSpeed);
         xRotation=transform.rotation.eulerAngles.x;
         light.intensity = (xRotation>150)? 0 : intensity;
 
