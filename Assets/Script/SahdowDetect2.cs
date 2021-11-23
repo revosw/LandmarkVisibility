@@ -25,6 +25,8 @@ public class SahdowDetect2 : MonoBehaviour
     float height;
     int total_num;
 
+    private bool activate;
+
 
     void Start()
     { 
@@ -36,7 +38,7 @@ public class SahdowDetect2 : MonoBehaviour
         mMeshRenderer = GetComponent<MeshRenderer>();
         mMaterial = mMeshRenderer.material;
 
-
+        activate = false;
 
     }
 
@@ -50,7 +52,7 @@ public class SahdowDetect2 : MonoBehaviour
      void Update()
      {
 
-        if(Input.GetMouseButtonDown(0)) 
+        if(activate == true) 
         {
             //Vector3 V3 = position;
             mHitCount=0;   
@@ -160,4 +162,12 @@ public class SahdowDetect2 : MonoBehaviour
 
   }
 
+    public void startShadowDetect()
+    {
+        if(activate == false)
+        {
+            activate = true;
+        }
+        else { activate = false; }
+    }
 }
