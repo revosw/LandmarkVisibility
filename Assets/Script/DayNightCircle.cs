@@ -43,7 +43,6 @@ public class DayNightCircle : MonoBehaviour
     {
         if(isPushed == false)
         {
-            Debug.Log("trykket");
             activ = true;
             isPushed = true;
             run = true;

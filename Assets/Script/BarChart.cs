@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.UI;
 
 public class BarChart : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class BarChart : MonoBehaviour
     private float width;
     private int total_num;
 
+    private bool activate;
 
     void Awake(){
         PositionMatrix(Gridsize);
@@ -34,7 +36,8 @@ public class BarChart : MonoBehaviour
 
      void Update()
      { 
-        if(Input.GetMouseButtonDown(0)){
+        if(activate)
+        {
             if (light == null) { print("no light"); return; }
 
             //for (int m = 40; m < 180; ++m){
@@ -146,5 +149,14 @@ public class BarChart : MonoBehaviour
             counter_width++;
         }
 
+    }
+
+    public void startBarChart()
+    {
+        if (activate == false)
+        {
+            activate = true;
+        }
+        else { activate = false; }
     }
 }
