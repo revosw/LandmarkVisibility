@@ -29,7 +29,6 @@ public class BarChart : MonoBehaviour
      { 
          
         if(Input.GetMouseButtonDown(0)){ 
-
             clickPosition = getMousePosition();
             Instantiate(barCube, clickPosition, Quaternion.identity);
         }
@@ -39,6 +38,11 @@ public class BarChart : MonoBehaviour
         //Intensity=LightIntensity;
 
      }
+
+    private void OnMouseUp()
+    {
+        
+    }
 
 
     Vector3 getMousePosition(){
