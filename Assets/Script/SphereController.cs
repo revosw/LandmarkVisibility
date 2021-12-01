@@ -66,7 +66,7 @@ public class SphereController : MonoBehaviour
                                 Debug.DrawRay(transform.position, transform.TransformDirection(rayDirection) * hit.distance, Color.yellow);
                                
                                 hitBuilding = hit.collider;
-                                hitBuilding.GetComponent<Renderer>().material.SetColor("_Color", Color.red);
+                                //hitBuilding.GetComponent<Renderer>().material.SetColor("_Color", Color.red);
 
                         totalRays++;
                         raysHit++;

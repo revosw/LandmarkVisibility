@@ -32,8 +32,8 @@ public class SahdowDetect2 : MonoBehaviour
     { 
 
 
-        //PositionMatrix(15.0f);
-        //Lights = new List<Light>(FindObjectsOfType<Light>()); 
+        PositionMatrix(5.0f);
+        Lights = new List<Light>(FindObjectsOfType<Light>()); 
 
         mMeshRenderer = GetComponent<MeshRenderer>();
         mMaterial = mMeshRenderer.material;
@@ -43,10 +43,10 @@ public class SahdowDetect2 : MonoBehaviour
     }
 
     void Awake(){
-        PositionMatrix(15f);
+        PositionMatrix(10f);
         Lights = new List<Light>(FindObjectsOfType<Light>()); 
         light = Lights[0];
-        //c
+        //light.transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(180,transform.localEulerAngles.y, transform.localEulerAngles.z),1.0f);
     }
 
      void Update()
