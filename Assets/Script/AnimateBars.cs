@@ -33,14 +33,14 @@ public class AnimateBars : MonoBehaviour
 
             //normalVector is the normal vector of the specific point at the surface.
             Vector3 normalVector = raycast.normal;
-            float angle = Vector3.Angle(-normalVector, sun.transform.forward);
+            float angle = Vector3.Angle(normalVector, sun.transform.forward);
 
             Debug.DrawRay(directionalRay.origin, -sun.transform.forward * 30);
             //print(sun.transform.forward);
 
             //if it is night, the light intensity should be 0.
-            if (angle > 90) { LightIntensity = 0; }
-            else { LightIntensity = (90 - angle) / 90; }
+            if (angle < 90) { LightIntensity = 0; }
+            else { LightIntensity = (angle - 90) / 90; }
 
         }
         return LightIntensity;
