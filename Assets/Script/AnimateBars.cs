@@ -17,7 +17,7 @@ public class AnimateBars : MonoBehaviour
     {
         intensity = getLightIntensity();
         transform.localScale = new Vector3(1, intensity * 50, 1);
-        print(transform.localScale.y);
+        //print(transform.localScale.y);
     }
 
     float getLightIntensity()
