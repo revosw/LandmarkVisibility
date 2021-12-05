@@ -1016,9 +1016,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 246f5f07c58cd634981d72a7ae2f8daf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parent: {fileID: 4651110404250504711}
+  landmark: {fileID: 0}
   activate: 0
-  visible: 0
   Visibiliyt_Index: 0
   visIndexDisplay: {fileID: 1917672775}
 --- !u!1 &958682068
@@ -1351,9 +1350,9 @@ RectTransform:
   m_Father: {fileID: 235353330}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 4.700012, y: -191.3}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 4.700012, y: 115.7}
   m_SizeDelta: {x: 99.986694, y: 30}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &976502058
