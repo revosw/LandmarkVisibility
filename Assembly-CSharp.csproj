@@ -53,21 +53,20 @@
     <UnityVersion>2020.3.22f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Assets\Script\WorldSpaceOverlayUI.cs" />
+    <Compile Include="Assets\Script\FaceCamera.cs" />
     <Compile Include="Assets\Script\SphereController.cs" />
     <Compile Include="Assets\Script\SkyExposure.cs" />
     <Compile Include="Assets\Script\GridPlane.cs" />
     <Compile Include="Assets\Script\BarChart.cs" />
-    <Compile Include="Assets\Script\HeatMap.cs" />
     <Compile Include="Assets\FreeFlyCamera\Scripts\FreeFlyCamera.cs" />
     <Compile Include="Assets\Script\AnimateBars.cs" />
     <Compile Include="Assets\FreeFlyCamera\Demo\Scripts\ToggleGameObjectEnable.cs" />
     <Compile Include="Assets\Script\lightController.cs" />
-    <Compile Include="Assets\Script\DayNightCircle.cs" />
+    <Compile Include="Assets\Script\DayNightCycle.cs" />
     <Compile Include="Assets\Script\ChangeFrequencyHeatmap.cs" />
-    <Compile Include="Assets\Script\SahdowDetect2.cs" />
+    <Compile Include="Assets\Script\ShadowDetect2.cs" />
     <Compile Include="Assets\Script\flycam.cs" />
-    <Compile Include="Assets\Script\FaceCamera.cs" />
-    <Compile Include="Assets\Script\WorldSpaceOverlayUI.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

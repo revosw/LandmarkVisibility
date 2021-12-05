@@ -142,7 +142,7 @@ public class ChangeFrequencyHeatmap : MonoBehaviour
         {
             for (int j = 0; j < resolution; j++)
             {
-                Debug.DrawRay(rayOrigins[i, j], -directionalLight.transform.forward * 100, Color.white);
+                //Debug.DrawRay(rayOrigins[i, j], -directionalLight.transform.forward * 100, Color.white);
                 shadows[i, j] = Physics.Raycast(rayOrigins[i, j], -directionalLight.transform.forward);
             }
         }

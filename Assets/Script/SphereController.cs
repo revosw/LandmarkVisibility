@@ -71,7 +71,7 @@ public class SphereController : MonoBehaviour
                 transform.RotateAround(landmark.transform.position, Vector3.up, 1);
             }
             transform.position = new Vector3(0, r, 0);
-            Debug.Log(transform.position);
+            //Debug.Log(transform.position);
         }
         Visibiliyt_Index = Mathf.Round(raysHit / totalRays * 100); // Calculate visibility index
         visIndexDisplay.text = ("Visibility index: " + Visibiliyt_Index); // Return index to canvas

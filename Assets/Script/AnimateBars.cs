@@ -39,7 +39,7 @@ public class AnimateBars : MonoBehaviour
             Vector3 normalVector = raycast.normal;
             float angle = Vector3.Angle(normalVector, sun.transform.forward);
 
-            Debug.DrawRay(directionalRay.origin, -sun.transform.forward * 30);
+            //Debug.DrawRay(directionalRay.origin, -sun.transform.forward * 30);
             //print(sun.transform.forward);
 
             //if it is night, the light intensity should be 0.

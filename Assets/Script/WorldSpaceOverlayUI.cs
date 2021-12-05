@@ -22,7 +22,7 @@ public class WorldSpaceOverlayUI : MonoBehaviour
             Material material = graphic.materialForRendering;
             if (material == null)
             {
-                Debug.LogError($"{nameof(WorldSpaceOverlayUI)}: skipping target without material {graphic.name}.{graphic.GetType().Name}");
+                //Debug.LogError($"{nameof(WorldSpaceOverlayUI)}: skipping target without material {graphic.name}.{graphic.GetType().Name}");
                 continue;
             }
             if (!materialMappings.TryGetValue(material, out Material materialCopy))

@@ -32,12 +32,12 @@ public class lightController : MonoBehaviour
 
         if (Physics.Raycast(transform.position, direction, out hit, Mathf.Infinity))
             {
-                Debug.DrawRay(transform.position, direction * hit.distance, Color.yellow);
+                //Debug.DrawRay(transform.position, direction * hit.distance, Color.yellow);
 
             }
             else
             {
-                Debug.DrawRay(transform.position, direction * 1000, Color.white);
+                //Debug.DrawRay(transform.position, direction * 1000, Color.white);
             }
         
         
