@@ -826,7 +826,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6815997262933828505, guid: dbb403c50f61ed7489fb2f722f7527a1, type: 3}
   m_PrefabInstance: {fileID: 6815997263303250181}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1910230838}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7cd3ac1bd82a74619bc0bdc9ac64d4bf, type: 3}
@@ -2265,6 +2265,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1902046142}
   m_CullTransparentMesh: 1
+--- !u!1 &1910230838 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6815997262933828508, guid: dbb403c50f61ed7489fb2f722f7527a1, type: 3}
+  m_PrefabInstance: {fileID: 6815997263303250181}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1917672773
 GameObject:
   m_ObjectHideFlags: 0
@@ -5352,17 +5357,21 @@ PrefabInstance:
       propertyPath: inputPattern
       value: 
       objectReference: {fileID: 632068286}
+    - target: {fileID: 9146763441845758942, guid: 01e2b372483514c48a03f54935de7479, type: 3}
+      propertyPath: directionalLight
+      value: 
+      objectReference: {fileID: 1910230838}
     - target: {fileID: 9146763441845758943, guid: 01e2b372483514c48a03f54935de7479, type: 3}
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 9146763441845758943, guid: 01e2b372483514c48a03f54935de7479, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -27.62
+      value: -31.12
       objectReference: {fileID: 0}
     - target: {fileID: 9146763441845758943, guid: 01e2b372483514c48a03f54935de7479, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.62
+      value: 0.17
       objectReference: {fileID: 0}
     - target: {fileID: 9146763441845758943, guid: 01e2b372483514c48a03f54935de7479, type: 3}
       propertyPath: m_LocalPosition.z
