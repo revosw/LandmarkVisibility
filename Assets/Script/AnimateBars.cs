@@ -1,23 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class AnimateBars : MonoBehaviour
 {
     private Light sun;
+    private Text percentageText;
     float intensity;
     // Start is called before the first frame update
     private void Start()
     {
         sun = FindObjectOfType<Light>();
+        percentageText = gameObject.transform.parent.GetComponentInChildren<Text>();
     }
 
     // Update is called once per frame
     void Update()
     {
         intensity = getLightIntensity();
+        percentageText.text = $"{(int)(intensity*100)}%";
         transform.localScale = new Vector3(1, intensity * 50, 1);
-        print(transform.localScale.y);
+        //print(transform.localScale.y);
     }
 
     float getLightIntensity()
