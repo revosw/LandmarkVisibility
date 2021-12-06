@@ -62,7 +62,7 @@ public class SkyExposure : MonoBehaviour
                 Ray ray = new Ray(mousePos, rayDirection);
                 RaycastHit hit;
 
-                Debug.DrawRay(mousePos, rayDirection, Color.white, 5f);
+                Debug.DrawRay(mousePos, rayDirection * 7, Color.white, 5f);
                 if (Physics.Raycast(ray, out hit, float.MaxValue, 1 << LayerMask.NameToLayer("Default")))
                 {
                     // If an object obstructed the ray, increase counter

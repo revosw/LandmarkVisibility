@@ -21,8 +21,8 @@ public class flycam : MonoBehaviour
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
         //float zoom = Input.GetAxis("Zoom");
-        lookHorizontal = lookHorizontal + Input.GetAxis("LookHorizontal");
-        lookVertical = lookVertical + Input.GetAxis("LookVertical");
+        lookHorizontal += Input.GetAxis("LookHorizontal") * 0.9f;
+        lookVertical += Input.GetAxis("LookVertical") * 0.9f;
         float speed = 40f;
         transform.Translate(horizontal * speed * Time.deltaTime, 0 , vertical * speed * Time.deltaTime);
         lookDirection = new Vector3(lookVertical, lookHorizontal, 0);
