@@ -28,7 +28,6 @@ public class BarChart : MonoBehaviour
 
     bool getMousePosition(out Vector3 clickPosition)
     {
-        //Debug.Log($"{Input.mousePosition.x} {Input.mousePosition.y}");
         clickPosition = Vector3.zero;
         if (clickedInsideButtonGroup()) return false;
 

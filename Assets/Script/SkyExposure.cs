@@ -32,7 +32,7 @@ public class SkyExposure : MonoBehaviour
                 mousePos = raycast.point;
 
                 // Start calculating sky exposure
-                StartCoroutine(CalculateSkyExposure());
+                CalculateSkyExposure();
             }
 
             // Update UI Label
@@ -40,7 +40,7 @@ public class SkyExposure : MonoBehaviour
         }
     }
 
-    IEnumerator CalculateSkyExposure()
+    void CalculateSkyExposure()
     {
         int counter_sky = 0;
         int counter_total = 0;
@@ -74,7 +74,6 @@ public class SkyExposure : MonoBehaviour
 
         // Percentage is how many of the total rays were not obstructed by an object
         SkyExposurePercentage = (1 - counter_sky * 1.0f / counter_total) * 100;
-        yield return new WaitForSeconds(3f);
     }
 
 }

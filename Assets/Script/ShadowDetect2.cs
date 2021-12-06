@@ -9,19 +9,14 @@ public class ShadowDetect2 : MonoBehaviour
     //variables' names
     //[SerializeField] private Vector3 position;
     [SerializeField] private int shadow_counter;
-    [SerializeField] private LayerMask _layers;
-
     private Vector3[,] positionMatrix;
-
+    Light light;
     Material mMaterial;
     MeshRenderer mMeshRenderer;
-
     float[] mPoints;
     int mHitCount;
-    Light light;
     float width;
     float height;
-    int total_num;
 
 
     void Start()
@@ -30,7 +25,7 @@ public class ShadowDetect2 : MonoBehaviour
         mMaterial = mMeshRenderer.material;
 
         // Generate grid of ray origins
-        GenerateRayMatrix(5.0f);
+        GenerateRayMatrix(8.0f);
     }
 
     void Awake()
@@ -126,20 +121,19 @@ public class ShadowDetect2 : MonoBehaviour
                 for (int i = 0; i < 180; ++i)
                 {
                     light.transform.localEulerAngles = new Vector3(i, transform.localEulerAngles.y, transform.localEulerAngles.z);
+                    // Cast ray to see if this position is in shadow
                     if (IsInShadow(light, position))
                     {
                         ++shadow_counter;
                     }
                 }
 
-
+                // Set shader buffer data
                 mPoints[mHitCount * 3] = position.x / width;
                 mPoints[mHitCount * 3 + 1] = position.z / height;
                 mPoints[(t + s) * 3 + 2] = shadow_counter;
+
                 mHitCount++;
-                print("Shadow counter in position " + position[0] + position[1] + position[2] + " is " + shadow_counter);
-
-
             }
         }
 

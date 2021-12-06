@@ -17,7 +17,7 @@ public class SphereController : MonoBehaviour
 
     public bool activate;
 
-    public float Visibiliyt_Index;
+    public float visibilityIndex;
     private float totalRays = 0;
     private float raysHit = 0;
     private int rotationPoints = 360;
@@ -34,46 +34,55 @@ public class SphereController : MonoBehaviour
 
         Mesh mesh = landmark.GetComponent<MeshFilter>().mesh;
         Bounds bounds = mesh.bounds;
-        landmarkHeight = bounds.size[1]; // Hight of landmark
+        landmarkHeight = bounds.size[1] * landmark.transform.localScale.y; // Hight of landmark
     }
 
 
     public void activateLandmark()
     {
-        RaycastHit hit;
+        StartCoroutine(CalculateVisibility());
+    }
 
-        Visibiliyt_Index = 0;
-        for (int r = 0; r < landmarkHeight; r = r + 10) // Check every 10 in hight of the landmark
+    IEnumerator CalculateVisibility()
+    {
+        RaycastHit hit;
+        transform.position = originPosition;
+        visibilityIndex = 0;
+        for (int altitude = 1; altitude < landmarkHeight; altitude += 5) // Check every 10 in hight of the landmark
         {
-            for (int j = 0; j < rotationPoints; j++) // Rotate around the landmark
+            for (int circumference = 0; circumference < rotationPoints; circumference++) // Rotate around the landmark
             {
-                for (float s = 0; s < 360; s += 1.0F) // Rotate around at each point
+                for (int angle = 0; angle < 360; angle++) // Rotate around at each point
                 {
                     if (Physics.Raycast(transform.position, transform.TransformDirection(rayDirection), out hit, Mathf.Infinity))
                     {
-                        //Debug.DrawRay(transform.position, transform.TransformDirection(rayDirection) * hit.distance, Color.yellow);
+                        // We might shoot the ray on the grass - the terrain doesn't have a renderer component
+                        // so we just skip this 
+                        if (hit.collider.gameObject.CompareTag("Building"))
+                        {
+                            hitBuilding = hit.collider;
+                            hitBuilding.GetComponent<Renderer>().material.SetColor("_Color", Color.red);
 
-                        hitBuilding = hit.collider;
-                        //hitBuilding.GetComponent<Renderer>().material.SetColor("_Color", Color.red);
-
-                        totalRays++; // Count rays
-                        raysHit++; // Count rays that hits
+                            raysHit++; // Count rays that hits
+                        }
+                        Debug.DrawRay(transform.position, transform.TransformDirection(rayDirection) * hit.distance, Color.yellow);
                     }
                     else
                     {
-                        //Debug.DrawRay(transform.position, transform.TransformDirection(rayDirection) * 1000, Color.white);
-                        totalRays++; // Count rays
+                        Debug.DrawRay(transform.position, transform.TransformDirection(rayDirection) * 1000, Color.white);
                     }
-                    Vector3 rotate = new Vector3(0, s, 0);
-                    transform.rotation = Quaternion.Euler(rotate);
+                    totalRays++; // Count rays
+                    transform.Rotate(Vector3.up);
                 }
-                
+
                 transform.RotateAround(landmark.transform.position, Vector3.up, 1);
+                //yield return null;
+                yield return null;
             }
-            transform.position = new Vector3(0, r, 0);
+            transform.position = new Vector3(transform.position.x, altitude, transform.position.z);
             //Debug.Log(transform.position);
         }
-        Visibiliyt_Index = Mathf.Round(raysHit / totalRays * 100); // Calculate visibility index
-        visIndexDisplay.text = ("Visibility index: " + Visibiliyt_Index); // Return index to canvas
+        visibilityIndex = Mathf.Round(raysHit / totalRays * 100); // Calculate visibility index
+        visIndexDisplay.text = ("Visibility index: " + visibilityIndex); // Return index to canvas
     }
 }

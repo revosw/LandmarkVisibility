@@ -110,28 +110,9 @@ public class ChangeFrequencyHeatmap : MonoBehaviour
 
         // The change frequency heatmap is now updated
         var scaledHeatMap = NormalizeChangeFrequencyMap(changeFrequencyMap);
-        PrintCFH(scaledHeatMap);
-        PrintCFH(changeFrequencyMap);
+        //PrintCFH(scaledHeatMap);
+        //PrintCFH(changeFrequencyMap);
         DrawChangeFrequencyMapTexture(scaledHeatMap);
-
-        //// In every ray position, cast a ray
-        //for (int i = 0; i < resolution; i++)
-        //{
-        //    for (int j = 0; j < resolution; j++)
-        //    {
-        //        Debug.DrawRay(rayOrigins[i, j], -directionalLight.transform.forward * 100, Color.white);
-
-        //        // Pixels are originally white...
-        //        tex.SetPixel(i, j, Color.white);
-
-        //        RaycastHit hit;
-        //        if (Physics.Raycast(rayOrigins[i, j], -directionalLight.transform.forward, out hit))
-        //        {
-        //            // ...however, if they hit something, turn them black as they are in a shadow
-        //            tex.SetPixel(i, j, Color.black);
-        //        }
-        //    }
-        //}
     }
 
     private bool[,] RecordShadows()
@@ -142,7 +123,6 @@ public class ChangeFrequencyHeatmap : MonoBehaviour
         {
             for (int j = 0; j < resolution; j++)
             {
-                //Debug.DrawRay(rayOrigins[i, j], -directionalLight.transform.forward * 100, Color.white);
                 shadows[i, j] = Physics.Raycast(rayOrigins[i, j], -directionalLight.transform.forward);
             }
         }
@@ -240,8 +220,6 @@ public class ChangeFrequencyHeatmap : MonoBehaviour
             }
             text += "\n";
         }
-
-        //Debug.Log(text);
     }
 
     private void PrintCFH(int[,] heatmap)
@@ -255,7 +233,5 @@ public class ChangeFrequencyHeatmap : MonoBehaviour
             }
             text += "\n";
         }
-
-        // Debug.Log(text);
     }
 }

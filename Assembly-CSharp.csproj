@@ -57,12 +57,10 @@
     <Compile Include="Assets\Script\FaceCamera.cs" />
     <Compile Include="Assets\Script\SphereController.cs" />
     <Compile Include="Assets\Script\SkyExposure.cs" />
-    <Compile Include="Assets\Script\GridPlane.cs" />
     <Compile Include="Assets\Script\BarChart.cs" />
     <Compile Include="Assets\FreeFlyCamera\Scripts\FreeFlyCamera.cs" />
-    <Compile Include="Assets\Script\AnimateBars.cs" />
+    <Compile Include="Assets\Script\LightIntensityBar.cs" />
     <Compile Include="Assets\FreeFlyCamera\Demo\Scripts\ToggleGameObjectEnable.cs" />
-    <Compile Include="Assets\Script\lightController.cs" />
     <Compile Include="Assets\Script\DayNightCycle.cs" />
     <Compile Include="Assets\Script\ChangeFrequencyHeatmap.cs" />
     <Compile Include="Assets\Script\ShadowDetect2.cs" />

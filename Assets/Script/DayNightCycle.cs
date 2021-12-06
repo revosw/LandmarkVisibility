@@ -20,7 +20,7 @@ public class DayNightCycle : MonoBehaviour
         //light.transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(50,132, 15),1.0f);
     }
 
-    public void toggleDayNight()
+    public void toggleDayNightCycle()
     {
         if (!toggled)
         {
