@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SkyExposure : MonoBehaviour
 {
@@ -8,47 +9,71 @@ public class SkyExposure : MonoBehaviour
     public Vector3 mousePos;
     public float SkyExposurePercentage;
 
-    void Start(){
+    public Text skyExpText;
+
+    void Start()
+    {
         cam = GetComponent<Camera>();
     }
 
-//get the position of mouse click
-    void Update(){
-        if(Input.GetMouseButtonDown(0)){ 
+    void Update()
+    {
+        // Left click
+        if (Input.GetMouseButtonDown(0))
+        {
 
+            // Shoot a ray towards world coordinate
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             RaycastHit raycast;
-            if(Physics.Raycast(ray, out raycast,float.MaxValue, 1<<LayerMask.NameToLayer("Ground"))){
-                mousePos=raycast.point;
-                StartCoroutine(CalculateSkyExposure());
+
+            // If the ray hit the ground, save the hit world coordinate
+            if (Physics.Raycast(ray, out raycast, float.MaxValue, 1 << LayerMask.NameToLayer("Ground")))
+            {
+                mousePos = raycast.point;
+
+                // Start calculating sky exposure
+                CalculateSkyExposure();
             }
-        }   
+
+            // Update UI Label
+            skyExpText.text = ("Sky visibility: " + SkyExposurePercentage);
+        }
     }
 
+    void CalculateSkyExposure()
+    {
+        int counter_sky = 0;
+        int counter_total = 0;
+        int i, j;
 
-//calculate the sky exposure
-    IEnumerator CalculateSkyExposure(){
-       int counter_sky=0;
-       int counter_total=0;
-       int i,j;
-        for (i=30;i<=150;i++){
-            for(j=60;j>=-60;j--){
+        // Iterate through all angles between 30° and 150° in x
+        for (i = 30; i <= 150; i++)
+        {
+            // Iterate through all angles between 60° and -60° in y
+            for (j = 60; j >= -60; j--)
+            {
                 counter_total++;
-                Vector3 rayDirection=new Vector3(Mathf.Cos(i*Mathf.PI/180),Mathf.Sin(i*Mathf.PI/180)*Mathf.Cos(j*Mathf.PI/180),Mathf.Sin(i*Mathf.PI/180)*Mathf.Sin(j*Mathf.PI/180));
-                Ray ray=new Ray(mousePos,rayDirection);
+
+                var pitch = Mathf.Cos(i * Mathf.PI / 180);
+                var yaw = Mathf.Sin(i * Mathf.PI / 180) * Mathf.Cos(j * Mathf.PI / 180);
+                var roll = Mathf.Sin(i * Mathf.PI / 180) * Mathf.Sin(j * Mathf.PI / 180);
+
+                Vector3 rayDirection = new Vector3(pitch, yaw, roll);
+                Ray ray = new Ray(mousePos, rayDirection);
                 RaycastHit hit;
-                if(Physics.Raycast(ray, out hit, float.MaxValue, 1<<LayerMask.NameToLayer("Default")))  
-                   {  
-                       counter_sky++;                        
 
-                   }  
+                Debug.DrawRay(mousePos, rayDirection, Color.white, 5f);
+                if (Physics.Raycast(ray, out hit, float.MaxValue, 1 << LayerMask.NameToLayer("Default")))
+                {
+                    // If an object obstructed the ray, increase counter
+                    counter_sky++;
+
+                }
             }
-
         }
 
-     SkyExposurePercentage=(1-counter_sky*1.0f/counter_total)*100;
-     yield return new WaitForSeconds(3f);
-        
-    }   
+        // Percentage is how many of the total rays were not obstructed by an object
+        SkyExposurePercentage = (1 - counter_sky * 1.0f / counter_total) * 100;
+    }
 
 }

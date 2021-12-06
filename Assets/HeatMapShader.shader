@@ -63,10 +63,10 @@ Shader "Unlit/HeatMapShader"
                 pointRanges[2] = 0.50;
                 pointRanges[3] = 0.75;
                 pointRanges[4] = 1.0;
-                _hitCount = 1; 
-                _Hits[0] = 0;
-                _Hits[1] = 0;
-                _Hits[2] = 2;
+                //_hitCount = 1; 
+                //_Hits[0] = 0;
+                //_Hits[1] = 0;
+                //_Hits[2] = 2;
             }
             
             float distsq(float2 a, float2 b) 
@@ -112,7 +112,7 @@ Shader "Unlit/HeatMapShader"
                 fixed4 col = tex2D(_MainTex, i.uv);
 
                 float2 uv = i.uv;
-                uv = uv * 4.0 - float2(2.0, 2.0); //change in coordinate range to -2 - 2
+                uv = uv * 4.0 - float2(4.0, 4.0); //change in coordinate range to -2 - 2
 
                 float totalWeight = 0;
                 for (float i = 0; i < _hitCount; i++)
