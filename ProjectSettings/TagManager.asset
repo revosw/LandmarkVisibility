@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Building
   - BarCube
+  - StreetLight
   layers:
   - Default
   - TransparentFX
